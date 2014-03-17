@@ -1,2 +1,20 @@
-<h1>Restaurants#new</h1>
-<p>Find me in app/views/restaurants/new.html.erb</p>
+<h1>Add Restaurant</h1>
+<p>Please complete the following form in order to add your restaurant.</p>
+<Hr>
+<%= form_for(@restaurant) do |f| %>
+	<%= f.label 		:name %><br>
+	<%= f.text_field	:name %><br>
+	<br>
+	<%= f.label 		:desc %><br>
+	<%= f.text_field	:desc %><br>
+	<br>	
+	<%= f.label 		:address %><br>
+	<%= f.text_field	:address %><br>
+	<br>
+	<%= f.label 		:phone %><br>
+	<%= f.text_field	:phone %><br>
+	<br>
+	<%= f.submit "Add Restaurant" %>
+
+<% end %>
+

@@ -1,2 +1,18 @@
-<h1>Restaurants#edit</h1>
-<p>Find me in app/views/restaurants/edit.html.erb</p>
+<h1>Edit Restaurant</h1>
+<hr>
+<%= form_for(@restaurant) do |f| %>
+	<%= f.label 		:name %><br>
+	<%= f.text_field	:name %><br>
+	<br>
+	<%= f.label 		:desc %><br>
+	<%= f.text_field	:desc %><br>
+	<br>	
+	<%= f.label 		:address %><br>
+	<%= f.text_field	:address %><br>
+	<br>
+	<%= f.label 		:phone %><br>
+	<%= f.text_field	:phone %><br>
+	<br>
+	<%= f.submit "Save Restaurant" %>
+
+<% end %>
