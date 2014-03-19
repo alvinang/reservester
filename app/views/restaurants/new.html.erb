@@ -1,7 +1,7 @@
 <h1>Add Restaurant</h1>
 <p>Please complete the following form in order to add your restaurant.</p>
 <Hr>
-<%= form_for(@restaurant) do |f| %>
+<%= form_for @restaurant, :html => {multipart: true} do |f| %>
 	<%= f.label 		:name %><br>
 	<%= f.text_field	:name %><br>
 	<br>
@@ -13,6 +13,9 @@
 	<br>
 	<%= f.label 		:phone %><br>
 	<%= f.text_field	:phone %><br>
+	<br>
+	<%= f.label 		:avatar %><br>
+	<%= f.file_field	:avatar %><br>
 	<br>
 	<%= f.submit "Add Restaurant" %>
 
