@@ -4,7 +4,7 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-    @restaurant = Restaurant.find_by_id(params[:id])
+    @restaurant = Restaurant.find(params[:id])
   end
 
   def new
@@ -16,6 +16,7 @@ class RestaurantsController < ApplicationController
     if @restaurant.save
       redirect_to @restaurant 
     else
+      flash.now[:errors] = @restaurant.errors.full_messages
       render 'new'
     end    
   end
@@ -29,6 +30,7 @@ class RestaurantsController < ApplicationController
     if @restaurant.update_attributes(restaurant_params)
       redirect_to @restaurant 
     else
+      flash.now[:errors] = @restaurant.errors.full_messages      
       render 'edit'
     end
   end
